@@ -1,0 +1,193 @@
+fileFormatVersion: 2
+guid: 546f3d36e929f6c4c97ee6588d0d4a1f
+timeCreated: 1523479437
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: auge_links
+    100002: auge_links001
+    100004: //RootNode
+    100006: butterfly_fell
+    100008: butterfly_gruppe
+    100010: fuehler_links
+    100012: hinterbein
+    100014: koerper
+    100016: left_wing
+    100018: left_wing_low
+    100020: left_wing_up
+    100022: mittelbein
+    100024: right_wing
+    100026: right_wing_low
+    100028: right_wing_up
+    100030: ruessel
+    100032: schutzpanzer
+    100034: vorderbein
+    400000: auge_links
+    400002: auge_links001
+    400004: //RootNode
+    400006: butterfly_fell
+    400008: butterfly_gruppe
+    400010: fuehler_links
+    400012: hinterbein
+    400014: koerper
+    400016: left_wing
+    400018: left_wing_low
+    400020: left_wing_up
+    400022: mittelbein
+    400024: right_wing
+    400026: right_wing_low
+    400028: right_wing_up
+    400030: ruessel
+    400032: schutzpanzer
+    400034: vorderbein
+    2100000: schmetterling
+    2300000: auge_links
+    2300002: auge_links001
+    2300004: fuehler_links
+    2300006: hinterbein
+    2300008: koerper
+    2300010: left_wing_low
+    2300012: left_wing_up
+    2300014: mittelbein
+    2300016: right_wing_low
+    2300018: right_wing_up
+    2300020: ruessel
+    2300022: schutzpanzer
+    2300024: vorderbein
+    3300000: auge_links
+    3300002: auge_links001
+    3300004: fuehler_links
+    3300006: hinterbein
+    3300008: koerper
+    3300010: left_wing_low
+    3300012: left_wing_up
+    3300014: mittelbein
+    3300016: right_wing_low
+    3300018: right_wing_up
+    3300020: ruessel
+    3300022: schutzpanzer
+    3300024: vorderbein
+    4300000: right_wing_up
+    4300002: right_wing_low
+    4300004: schutzpanzer
+    4300006: fuehler_links
+    4300008: koerper
+    4300010: vorderbein
+    4300012: ruessel
+    4300014: hinterbein
+    4300016: auge_links001
+    4300018: auge_links
+    4300020: mittelbein
+    4300022: left_wing_up
+    4300024: left_wing_low
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 6
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
