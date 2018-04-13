@@ -17,7 +17,7 @@ public class GameStart : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //SceneManager.LoadScene("Main");
+            SceneManager.LoadScene("Main");
         }
 
     }
