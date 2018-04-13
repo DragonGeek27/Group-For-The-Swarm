@@ -293,6 +293,11 @@
   <ItemGroup>
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Prefabs\Flowers\Fantasy Forest Set\Sources\Shaders\Grid.shader" />
+    <None Include="Assets\Prefabs\Flowers\Fantasy Forest Set\Sources\Shaders\StandardSpecular_2Sided.shader" />
+    <None Include="Assets\Prefabs\Flowers\Fantasy Forest Set\Sources\Shaders\Vegitation.shader" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>
