@@ -6,9 +6,11 @@ public class DestroyByContact : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject playerExplosion;
+    public GameObject pollen;
     public int scoreValue;
 
     private GameController gameController;
+    private Quaternion polRotation = new Quaternion();
 
     void Start()
     {
@@ -25,24 +27,41 @@ public class DestroyByContact : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Boundary") || other.CompareTag("Enemy"))
+        if (other.CompareTag("Boundary") || other.CompareTag("Enemy") || other.CompareTag("Pollen"))
         {
             return;
         }
 
+        if (gameObject.CompareTag("Pollen") && other.CompareTag("Bolt"))
+        {
+            return;
+        }
+
+        if (gameObject.CompareTag("Pollen") && other.CompareTag("Player"))
+        {
+            gameController.AddScore(scoreValue);
+            Destroy(gameObject);                        
+            return;
+        }
+
+        
+        
         if (explosion != null)
         {
             Instantiate(explosion, transform.position, transform.rotation);
+            Instantiate(pollen, gameObject.transform.position, polRotation);
         }
 
-        if (other.tag == "Player")
+        if (other.CompareTag("Player") && !gameObject.CompareTag("Pollen"))
         {
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
             gameController.GameOver();
         }
 
-        gameController.AddScore(scoreValue);
+        //gameController.AddScore(scoreValue);
+
         Destroy(other.gameObject);
         Destroy(gameObject);
+
     }
 }
