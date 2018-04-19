@@ -5,11 +5,9 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
 
-    float timeCounter = 0;
-    float speed = 10;
     public Transform target;
-    public float RotationSpeed = 100f;
-    public float OrbitDegrees = 1f;
+    public float RotationSpeed = 0f;
+    public float OrbitDegrees = 0f;
 
     private void Start()
     {
