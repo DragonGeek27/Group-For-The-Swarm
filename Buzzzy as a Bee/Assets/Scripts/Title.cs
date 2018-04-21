@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot : MonoBehaviour {
+public class Title : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,4 +13,8 @@ public class Shoot : MonoBehaviour {
 	void Update () {
 		
 	}
+    void OnMouseDown()
+    {
+        Application.LoadLevel("Title");
+    }
 }
