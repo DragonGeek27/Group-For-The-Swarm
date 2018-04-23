@@ -40,6 +40,8 @@ public class DestroyByContact : MonoBehaviour
         if (gameObject.CompareTag("Pollen") && other.CompareTag("Player"))
         {
             gameController.AddScore(scoreValue);
+            Instantiate(explosion, transform.position, transform.rotation);
+            
             Destroy(gameObject);                        
             return;
         }
@@ -59,7 +61,7 @@ public class DestroyByContact : MonoBehaviour
         }
 
         //gameController.AddScore(scoreValue);
-
+        gameController.AddScore(scoreValue);
         Destroy(other.gameObject);
         Destroy(gameObject);
 

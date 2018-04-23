@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "998219432966",
+    "firebase_url": "https://buzzyasabee-43c56.firebaseio.com",
+    "project_id": "buzzyasabee-43c56",
+    "storage_bucket": "buzzyasabee-43c56.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998219432966:android:898db9f4e6212cda",
+        "android_client_info": {
+          "package_name": "com.GitGud.BuzzyAsABee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998219432966-c7rqagievf5e7teg3fd9i4tsnr5bi4u5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM_O-fAYuyYR2-IaQLEC37EaxH3iCrnSM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

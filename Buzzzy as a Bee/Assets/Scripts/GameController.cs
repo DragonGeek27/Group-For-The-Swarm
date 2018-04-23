@@ -72,7 +72,7 @@ public class GameController : MonoBehaviour
 
     void UpdateScore()
     {
-        scoreText.text = "Score: " + score;
+        scoreText.text = "Pollen Count: " + score;
     }
 
     public void GameOver()
