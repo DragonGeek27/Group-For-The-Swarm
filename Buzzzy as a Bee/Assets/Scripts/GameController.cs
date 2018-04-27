@@ -9,20 +9,25 @@ public class GameController : MonoBehaviour
     public float spawnWait;
     public float startWait;
     public float waveWait;
+    public GameObject bossPrefab;
 
     public GUIText scoreText;
     public GUIText restartText;
     public GUIText gameOverText;
     public GUIText mainMenuText;
+    private BossBehavior script;
 
     private bool gameOver;
     private bool restart;
     private bool mainMenu;
     private int score;
+    private bool bossBattle;
+    private int bossCount;
 
     void Start()
     {
         gameOver = false;
+        bossCount = 1;
         restart = false;
         mainMenu = false;
         restartText.text = "";
@@ -31,17 +36,25 @@ public class GameController : MonoBehaviour
         score = 0;
         UpdateScore();
         StartCoroutine(SpawnWaves());
+        script = bossPrefab.GetComponent<BossBehavior>();
+
     }
 
     void Update()
     {
-
+        if (script.isDestroyed())
+        {
+            bossCount++;
+            score += 5;
+            Debug.Log("What's the deal?");
+            StartCoroutine(SpawnWaves());
+        }
     }
 
     IEnumerator SpawnWaves()
     {
         yield return new WaitForSeconds(startWait);
-        while (true)
+        while (score / (10 * bossCount) != 1)
         {
             for (int i = 0; i < hazardCount; i++)
             {
@@ -50,18 +63,32 @@ public class GameController : MonoBehaviour
                 Quaternion spawnRotation = Quaternion.identity;
                 Instantiate(hazard, spawnPosition, spawnRotation);
                 yield return new WaitForSeconds(spawnWait);
+                bossBattle = false;
             }
             yield return new WaitForSeconds(waveWait);
 
             if (gameOver)
             {
-                restartText.text = "Try Aagain";
+                restartText.text = "Try Again";
                 restart = true;
                 mainMenuText.text = "Start Screen";
                 mainMenu = true;
                 break;
             }
         }
+        if (score / (10 * bossCount) == 1)
+        {
+            bossBattle = true;
+            spawnBoss();
+        }
+    }
+
+    public void spawnBoss()
+    {
+        GameObject go = bossPrefab;
+        Vector3 boss = new Vector3(0, 0, 30);
+        Instantiate(go, boss, transform.rotation);
+
     }
 
     public void AddScore(int newScoreValue)
