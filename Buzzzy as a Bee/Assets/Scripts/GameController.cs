@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour
         if (script.isDestroyed())
         {
             bossCount++;
-            score += 5;
+            score += 250;
             Debug.Log("What's the deal?");
             StartCoroutine(SpawnWaves());
         }
@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour
     IEnumerator SpawnWaves()
     {
         yield return new WaitForSeconds(startWait);
-        while (score / (10 * bossCount) != 1)
+        while (score / (1000 * bossCount) != 1)
         {
             for (int i = 0; i < hazardCount; i++)
             {
@@ -66,17 +66,8 @@ public class GameController : MonoBehaviour
                 bossBattle = false;
             }
             yield return new WaitForSeconds(waveWait);
-
-            if (gameOver)
-            {
-                restartText.text = "Try Again";
-                restart = true;
-                mainMenuText.text = "Start Screen";
-                mainMenu = true;
-                break;
-            }
         }
-        if (score / (10 * bossCount) == 1)
+        if (score / (1000 * bossCount) == 1)
         {
             bossBattle = true;
             spawnBoss();
@@ -106,5 +97,9 @@ public class GameController : MonoBehaviour
     {
         gameOverText.text = "Game Over!";
         gameOver = true;
+        restartText.text = "Try Again";
+        restart = true;
+        mainMenuText.text = "Start Screen";
+        mainMenu = true;
     }
 }

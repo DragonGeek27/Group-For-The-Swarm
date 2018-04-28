@@ -24,8 +24,8 @@ public class BossBehavior : MonoBehaviour {
     public Image healthBar;
     public int bossHealth;
     private float birdHealth = 10;
-    private static int maxHealth = 10;
-    private static int pleaseWork = 10;
+    private static int maxHealth = 50;
+    private static int pleaseWork = 50;
     public void Start()
     {
         bossHealth = 100;
