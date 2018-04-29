@@ -36,7 +36,7 @@ public class DatabaseHandler : MonoBehaviour
 
     ArrayList leaderBoard = new ArrayList();
 
-    private const int MaxScores = 10;
+    private const int MaxScores = 5;
     private string logText = "";
     private string email = "";
     private int score = 100;

@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameController : MonoBehaviour
 {
     public GameObject[] hazards;
+    public GameObject signInMenu;
     public Vector3 spawnValues;
     public int hazardCount;
     public float spawnWait;
@@ -11,7 +13,7 @@ public class GameController : MonoBehaviour
     public float waveWait;
     public GameObject bossPrefab;
 
-    public GUIText scoreText;
+    public Text scoreText;
     public GUIText restartText;
     public GUIText gameOverText;
     public GUIText mainMenuText;
@@ -34,15 +36,20 @@ public class GameController : MonoBehaviour
         restartText.text = "";
         gameOverText.text = "";
         mainMenuText.text = "";
+        signInMenu.SetActive(false);
         score = 0;
         UpdateScore();
         StartCoroutine(SpawnWaves());
         script = bossPrefab.GetComponent<BossBehavior>();
-
     }
 
     void Update()
     {
+        //if (restart)
+        //{
+        //    Restart();
+        //}
+
         if (script.isDestroyed())
         {
             bossCount++;
@@ -103,5 +110,14 @@ public class GameController : MonoBehaviour
         restart = true;
         mainMenuText.text = "Start Screen";
         mainMenu = true;
+        signInMenu.SetActive(true);
     }
+
+    //public void Restart()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Return))
+    //    {
+    //        Application.LoadLevel(Application.loadedLevel);
+    //    }
+    //}
 }
