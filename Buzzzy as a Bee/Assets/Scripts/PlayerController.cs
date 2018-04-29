@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
 
     //Joystick
     private Rigidbody2D myBody;
-    public GameObject shot2;
+    //public GameObject shot2;
 
     void Start () {
         rb = GetComponent<Rigidbody>();
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
     }
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time > nextFire)
+        if (CrossPlatformInputManager.GetButton("Fire1") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             //           GameObject clone = 

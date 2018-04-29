@@ -196,7 +196,7 @@ public class DatabaseHandler : MonoBehaviour
     {
 
         score = gameController.GetComponent<GameController>()._score;
-        email = nameText.text;        
+        email = nameText.text;
 
         if (score == 0 || string.IsNullOrEmpty(email))
         {

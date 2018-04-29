@@ -1,51 +1,61 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 
 public class GameController : MonoBehaviour
 {
     public GameObject[] hazards;
-    public GameObject signInMenu;
     public Vector3 spawnValues;
     public int hazardCount;
     public float spawnWait;
     public float startWait;
     public float waveWait;
+    public GameObject bossPrefab;
 
-    public Text scoreText;
-    public Text restartText;
-    public Text gameOverText;
+    public GUIText scoreText;
+    public GUIText restartText;
+    public GUIText gameOverText;
+    public GUIText mainMenuText;
+    private BossBehavior script;
 
     private bool gameOver;
     private bool restart;
+    private bool mainMenu;
     private int score;
-
     public int _score;
+    private bool bossBattle;
+    private int bossCount;
 
     void Start()
     {
         gameOver = false;
+        bossCount = 1;
         restart = false;
+        mainMenu = false;
         restartText.text = "";
         gameOverText.text = "";
-        signInMenu.SetActive(false);
+        mainMenuText.text = "";
         score = 0;
         UpdateScore();
         StartCoroutine(SpawnWaves());
+        script = bossPrefab.GetComponent<BossBehavior>();
+
     }
 
     void Update()
     {
-        if (restart)
+        if (script.isDestroyed())
         {
-            Restart();
+            bossCount++;
+            score += 250;
+            Debug.Log("What's the deal?");
+            StartCoroutine(SpawnWaves());
         }
     }
 
     IEnumerator SpawnWaves()
     {
         yield return new WaitForSeconds(startWait);
-        while (true)
+        while (score / (1000 * bossCount) != 1)
         {
             for (int i = 0; i < hazardCount; i++)
             {
@@ -54,16 +64,23 @@ public class GameController : MonoBehaviour
                 Quaternion spawnRotation = Quaternion.identity;
                 Instantiate(hazard, spawnPosition, spawnRotation);
                 yield return new WaitForSeconds(spawnWait);
+                bossBattle = false;
             }
             yield return new WaitForSeconds(waveWait);
-
-            if (gameOver)
-            {
-                restartText.text = "Press 'Enter' for Restart";
-                restart = true;
-                break;
-            }
         }
+        if (score / (1000 * bossCount) == 1)
+        {
+            bossBattle = true;
+            spawnBoss();
+        }
+    }
+
+    public void spawnBoss()
+    {
+        GameObject go = bossPrefab;
+        Vector3 boss = new Vector3(0, 0, 30);
+        Instantiate(go, boss, transform.rotation);
+
     }
 
     public void AddScore(int newScoreValue)
@@ -75,21 +92,16 @@ public class GameController : MonoBehaviour
     void UpdateScore()
     {
         _score = score;
-        scoreText.text = "Pollen Count: " + score.ToString();
+        scoreText.text = "Pollen Count: " + score;
     }
 
     public void GameOver()
     {
         gameOverText.text = "Game Over!";
         gameOver = true;
-        signInMenu.SetActive(true);
-    }
-
-    public void Restart()
-    {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            Application.LoadLevel(Application.loadedLevel);
-        }
+        restartText.text = "Try Again";
+        restart = true;
+        mainMenuText.text = "Start Screen";
+        mainMenu = true;
     }
 }
