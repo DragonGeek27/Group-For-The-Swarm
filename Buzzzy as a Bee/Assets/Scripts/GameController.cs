@@ -1,22 +1,26 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameController : MonoBehaviour
 {
     public GameObject[] hazards;
+    public GameObject signInMenu;
     public Vector3 spawnValues;
     public int hazardCount;
     public float spawnWait;
     public float startWait;
     public float waveWait;
 
-    public GUIText scoreText;
-    public GUIText restartText;
-    public GUIText gameOverText;
+    public Text scoreText;
+    public Text restartText;
+    public Text gameOverText;
 
     private bool gameOver;
     private bool restart;
     private int score;
+
+    public int _score;
 
     void Start()
     {
@@ -24,6 +28,7 @@ public class GameController : MonoBehaviour
         restart = false;
         restartText.text = "";
         gameOverText.text = "";
+        signInMenu.SetActive(false);
         score = 0;
         UpdateScore();
         StartCoroutine(SpawnWaves());
@@ -33,10 +38,7 @@ public class GameController : MonoBehaviour
     {
         if (restart)
         {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                Application.LoadLevel(Application.loadedLevel);
-            }
+            Restart();
         }
     }
 
@@ -57,7 +59,7 @@ public class GameController : MonoBehaviour
 
             if (gameOver)
             {
-                restartText.text = "Press 'R' for Restart";
+                restartText.text = "Press 'Enter' for Restart";
                 restart = true;
                 break;
             }
@@ -72,12 +74,22 @@ public class GameController : MonoBehaviour
 
     void UpdateScore()
     {
-        scoreText.text = "Pollen Count: " + score;
+        _score = score;
+        scoreText.text = "Pollen Count: " + score.ToString();
     }
 
     public void GameOver()
     {
         gameOverText.text = "Game Over!";
         gameOver = true;
+        signInMenu.SetActive(true);
+    }
+
+    public void Restart()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
     }
 }
