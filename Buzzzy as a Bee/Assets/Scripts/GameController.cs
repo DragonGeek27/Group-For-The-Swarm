@@ -23,7 +23,10 @@ public class GameController : MonoBehaviour
     private bool restart;
     private bool mainMenu;
     private int score;
+<<<<<<< HEAD
     public int _score;
+=======
+>>>>>>> a21646f3ea643c837f53ed582e0ca1b6b3d68b13
     private bool bossBattle;
     private int bossCount;
 
@@ -41,15 +44,22 @@ public class GameController : MonoBehaviour
         UpdateScore();
         StartCoroutine(SpawnWaves());
         script = bossPrefab.GetComponent<BossBehavior>();
+<<<<<<< HEAD
+=======
+
+>>>>>>> a21646f3ea643c837f53ed582e0ca1b6b3d68b13
     }
 
     void Update()
     {
+<<<<<<< HEAD
         //if (restart)
         //{
         //    Restart();
         //}
 
+=======
+>>>>>>> a21646f3ea643c837f53ed582e0ca1b6b3d68b13
         if (script.isDestroyed())
         {
             bossCount++;
@@ -110,7 +120,10 @@ public class GameController : MonoBehaviour
         restart = true;
         mainMenuText.text = "Start Screen";
         mainMenu = true;
+<<<<<<< HEAD
         signInMenu.SetActive(true);
+=======
+>>>>>>> a21646f3ea643c837f53ed582e0ca1b6b3d68b13
     }
 
     //public void Restart()

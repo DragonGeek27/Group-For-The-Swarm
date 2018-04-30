@@ -271,7 +271,10 @@
     <Compile Include="Assets\Scripts\BackgroundScroller.cs" />
     <Compile Include="Assets\Scripts\BGScroller.cs" />
     <Compile Include="Assets\Scripts\BossBehavior.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\DatabaseHandler.cs" />
+=======
+>>>>>>> a21646f3ea643c837f53ed582e0ca1b6b3d68b13
     <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
     <Compile Include="Assets\Scripts\DestroyByContact.cs" />
     <Compile Include="Assets\Scripts\DestroyByTime.cs" />
